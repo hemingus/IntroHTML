@@ -1,5 +1,6 @@
-console.log("Hello world!")
-const handleListe = []
+
+const storedList = localStorage.getItem("handleListe");
+const handleListe = storedList ? JSON.parse(storedList) : []
 const formHandleliste = document.getElementById("form")
 const containerHandleliste = document.getElementById("container")
 
