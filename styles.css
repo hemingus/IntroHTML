@@ -1,4 +1,5 @@
-* {
+body {
+    background: black;
     margin: 0;
 }
 .section-1 {
@@ -27,4 +28,10 @@
     color: white;
     width: 60%;
     font-size: 20px;
+}
+
+.input-text {
+    background: grey;
+    color: white;
+    font-size: 2rem;
 }

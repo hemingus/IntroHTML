@@ -5,9 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
-    <section class="section-1">    
+    <section class="section-1">
+        <h3>Legg til handlelisten</h3>
+        <form id="form">
+            <label>
+                Navn:
+                <input type="text" id="input-navn" required>
+            </label>
+            <br><br>
+            <label>
+                Pris:
+                <input type="text" id="input-pris" required>
+            </label>
+            <br><br>
+            <label>
+                Sunn?
+                <input type="checkbox" id="input-sunn">
+            </label>
+            <br><br>
+            <button type="submit">Legg til</button>
+        </form>
+        <div class="section-1" id="container"></div>
+    </section>
+     
+    <section class="section-1">  
         <h1>Hello HTML</h1>
         <h2>Hello HTML</h2>
         <h3>Hello HTML</h3>
