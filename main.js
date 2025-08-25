@@ -1,5 +1,5 @@
 console.log("Hello world!")
-const handleListe = localStorage.getItem("handleListe")
+const handleListe = []
 const formHandleliste = document.getElementById("form")
 const containerHandleliste = document.getElementById("container")
 
