@@ -10,6 +10,7 @@ function saveList(list) {
 
 function renderHandleliste() {
     container.innerHTML = ""
+    const handleListe = storedList ? JSON.parse(storedList) : []
     handleListe.forEach((x, index) => {
         const p = document.createElement("p")
         p.textContent = `${x.navn} ${x.pris} kr (${sunnToString(x.sunn)})`
