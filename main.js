@@ -1,6 +1,6 @@
 
 const storedList = localStorage.getItem("handleListe");
-const handleListe = storedList ? JSON.parse(storedList) : []
+let handleListe = storedList ? JSON.parse(storedList) : []
 const formHandleliste = document.getElementById("form")
 const containerHandleliste = document.getElementById("container")
 
@@ -10,7 +10,6 @@ function saveList(list) {
 
 function renderHandleliste() {
     container.innerHTML = ""
-    const handleListe = storedList ? JSON.parse(storedList) : []
     handleListe.forEach((x, index) => {
         const p = document.createElement("p")
         p.textContent = `${x.navn} ${x.pris} kr (${sunnToString(x.sunn)})`
@@ -18,6 +17,7 @@ function renderHandleliste() {
         btn.innerHTML = "remove"
         btn.addEventListener("click", () => {
             handleListe.splice(index, 1)
+            saveList(handleListe);
             renderHandleliste();
         })
         p.appendChild(btn);
@@ -35,8 +35,8 @@ formHandleliste.addEventListener("submit", (event) => {
 
     handleListe.push({navn, pris, sunn})
     formHandleliste.reset()
+    saveList();
     renderHandleliste()
-
 })
 
 function sunnToString(bool) {
