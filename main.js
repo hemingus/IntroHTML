@@ -13,9 +13,21 @@ function renderHandleliste() {
     container.innerHTML = ""
     handleListe.forEach((x, index) => {
         const p = document.createElement("p")
-        p.textContent = `${x.navn} ${x.pris} kr (${sunnToString(x.sunn)})`
+        p.style.justifyContent = "start"
+        p.style.gap = "10px"
+        if (!x.sunn) p.style.background = "beige"
+        const indexText = document.createElement("span")
+        indexText.textContent = (index + 1).toString()
+        const navnText = document.createElement("span")
+        navnText.textContent = x.navn
+        const prisText = document.createElement("span")
+        prisText.style.background = "yellowgreen"
+        prisText.textContent = `${x.pris.toString()} kr`
+        p.append(indexText, navnText, prisText)
+        
         const btn = document.createElement("button")
         btn.innerHTML = "X"
+        btn.style.marginLeft = "auto"
         btn.setAttribute("data-tooltip", "Remove item");
         btn.addEventListener("click", () => {
             tooltip.classList.remove("show");
