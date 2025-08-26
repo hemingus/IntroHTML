@@ -8,28 +8,27 @@
     <script src="main.js" defer></script>
 </head>
 <body>
-    <section class="section-1">
-        <h3>Legg til handlelisten</h3>
+    <section class="form-section">
         <form id="form">
-            <label>
+            <h3 class="form-header">Legg til handlelisten</h3>
+            <label class="flex-row">
                 Navn:
                 <input type="text" id="input-navn" required>
             </label>
-            <br><br>
-            <label>
+            <label class="flex-row">
                 Pris:
                 <input type="text" id="input-pris" required>
             </label>
-            <br><br>
-            <label>
+            <label class="flex-row">
                 Sunn?
-                <input type="checkbox" id="input-sunn">
+                <input class="form-checkbox" type="checkbox" id="input-sunn">
             </label>
-            <br><br>
-            <button type="submit">Legg til</button>
+            <button class="form-button" type="submit">Legg til</button>
         </form>
-        <h3>Handleliste:</h3>
-        <div class="section-1" id="container"></div>
+        <div>
+            <h3 class="form-header">Handleliste:</h3>
+            <div class="handleliste" id="container"></div>
+        </div>
     </section>
      
     <section class="section-1">  

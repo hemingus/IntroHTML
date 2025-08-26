@@ -14,7 +14,7 @@ function renderHandleliste() {
         const p = document.createElement("p")
         p.textContent = `${x.navn} ${x.pris} kr (${sunnToString(x.sunn)})`
         const btn = document.createElement("button")
-        btn.innerHTML = "remove"
+        btn.innerHTML = "X"
         btn.addEventListener("click", () => {
             handleListe.splice(index, 1)
             saveList(handleListe);
@@ -24,7 +24,6 @@ function renderHandleliste() {
         container.appendChild(p);
         saveList(handleListe);
     })
-    
 }
 
 formHandleliste.addEventListener("submit", (event) => {
