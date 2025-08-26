@@ -1,4 +1,5 @@
 
+
 const storedList = localStorage.getItem("handleListe");
 let handleListe = storedList ? JSON.parse(storedList) : []
 const formHandleliste = document.getElementById("form")
@@ -15,7 +16,9 @@ function renderHandleliste() {
         p.textContent = `${x.navn} ${x.pris} kr (${sunnToString(x.sunn)})`
         const btn = document.createElement("button")
         btn.innerHTML = "X"
+        btn.setAttribute("data-tooltip", "Remove item");
         btn.addEventListener("click", () => {
+            tooltip.classList.remove("show");
             handleListe.splice(index, 1)
             saveList(handleListe);
             renderHandleliste();
